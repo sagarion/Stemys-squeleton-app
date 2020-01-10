@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="Encoding">
+    <file url="file://$PROJECT_DIR$" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/io.stemys.app.api" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/io.stemys.app.features" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/io.stemys.app.init" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/io.stemys.app.job" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/io.stemys.app.kar" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/io.stemys.app.model" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/io.stemys.app.persistence" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/io.stemys.app.stem" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/io.stemys.app.web" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/io.stemys.binding.smartfactory" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/io.stemys.binding.switchbutton" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/io.stemys.protocol.modbus" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/io.stemys.thingtype.smartfactory.wago" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/io.stemys.thingtype.switchbutton.wago" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/io.stemys.thingtype.test" charset="UTF-8" />
+  </component>
+</project>

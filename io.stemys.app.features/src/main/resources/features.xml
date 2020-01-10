@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<features name="brw-jellix-shopfloor-${pom.version}" xmlns="http://karaf.apache.org/xmlns/features/v1.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://karaf.apache.org/xmlns/features/v1.0.0 http://karaf.apache.org/xmlns/features/v1.0.0">
+
+	<feature name="${app.feature}" version="${pom.version}">
+		<!-- You shouldn't add more features here, except if you add some OSGi bundles in the project -->
+		<bundle>mvn:${groupId}/${project.groupId}.model/${pom.version}</bundle>
+		<bundle>mvn:${groupId}/${project.groupId}.init/${pom.version}</bundle>
+		<bundle>mvn:${groupId}/${project.groupId}.api/${pom.version}</bundle>
+		<bundle>mvn:${groupId}/${project.groupId}.web/${pom.version}</bundle>
+		<bundle>mvn:${groupId}/${project.groupId}.job/${pom.version}</bundle>
+		<bundle>mvn:${groupId}/${project.groupId}.persistence/${pom.version}</bundle>
+
+		<!-- Don't forget to add your bindings here -->
+		<bundle>mvn:${groupId}/io.stemys.binding.smartfactory/${pom.version}</bundle>
+		<!-- End bindings declaration -->
+	</feature>
+
+</features>

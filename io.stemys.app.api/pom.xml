@@ -1,0 +1,180 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<groupId>io.stemys.app</groupId>
+		<artifactId>io.stemys.app.parent</artifactId>
+		<version>0.0.1-SNAPSHOT</version>
+		<relativePath>..</relativePath>
+	</parent>
+
+	<artifactId>io.stemys.app.api</artifactId>
+	<name>io.stemys.app.api</name>
+	<packaging>bundle</packaging>
+
+	<properties>
+		<scanPath>${project.artifactId}</scanPath>
+	</properties>
+
+	<dependencies>
+		<dependency>
+			<groupId>javax.enterprise</groupId>
+			<artifactId>cdi-api</artifactId>
+			<version>1.2</version>
+			<optional>true</optional>
+		</dependency>
+		<dependency>
+			<groupId>org.hibernate</groupId>
+			<artifactId>hibernate-validator</artifactId>
+			<version>5.0.3.Final</version>
+		</dependency>
+		<dependency>
+			<groupId>javax.el</groupId>
+			<artifactId>javax.el-api</artifactId>
+			<version>2.2.4</version>
+		</dependency>
+		<dependency>
+			<groupId>org.glassfish.web</groupId>
+			<artifactId>javax.el</artifactId>
+			<version>2.2.4</version>
+		</dependency>
+
+		<!-- JOSE dependencies -->
+		<dependency>
+			<groupId>org.apache.cxf</groupId>
+			<artifactId>cxf-rt-rs-security-jose</artifactId>
+			<version>3.1.10</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.cxf</groupId>
+			<artifactId>cxf-rt-rs-security-jose-jaxrs</artifactId>
+			<version>3.1.10</version>
+		</dependency>
+
+		<!-- Dependance necessaire pour le service web REST (GET, POST, PUT, Response, ...) -->
+		<dependency>
+			<groupId>org.apache.cxf</groupId>
+			<artifactId>cxf-rt-frontend-jaxrs</artifactId>
+			<version>${cxf.version}</version>
+			<scope>provided</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.cxf</groupId>
+			<artifactId>cxf-rt-rs-security-cors</artifactId>
+			<version>${cxf.version}</version>
+			<scope>provided</scope>
+		</dependency>
+
+		<!-- Dependances necessaires pour la dependance org.apache.cxf/cxf-rt-frontend-jaxrs -->
+		<dependency>
+			<groupId>org.apache.cxf</groupId>
+			<artifactId>cxf-rt-frontend-jaxws</artifactId>
+			<version>${cxf.version}</version>
+			<scope>provided</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.cxf</groupId>
+			<artifactId>cxf-rt-transports-http</artifactId>
+			<version>${cxf.version}</version>
+			<scope>provided</scope>
+		</dependency>
+
+		<!-- Junit test dependency -->
+		<dependency>
+			<groupId>org.apache.cxf</groupId>
+			<artifactId>cxf-rt-rs-client</artifactId>
+			<version>${cxf.version}</version>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.cxf</groupId>
+			<artifactId>cxf-rt-transports-local</artifactId>
+			<version>${cxf.version}</version>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.mockito</groupId>
+			<artifactId>mockito-core</artifactId>
+			<version>2.6.3</version>
+			<scope>test</scope>
+		</dependency>
+
+		<!-- Dependance necessaire pour org.slf4j.Logger -->
+		<dependency>
+			<groupId>org.apache.cxf</groupId>
+			<artifactId>cxf-rt-transports-http-jetty</artifactId>
+			<version>${cxf.version}</version>
+			<scope>provided</scope>
+		</dependency>
+
+		<!-- Dependance pour org.osgi.service.log.LogService -->
+		<dependency>
+			<groupId>org.osgi</groupId>
+			<artifactId>org.osgi.compendium</artifactId>
+			<version>5.0.0</version>
+			<scope>provided</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.cxf</groupId>
+			<artifactId>cxf-rt-features-logging</artifactId>
+			<version>${cxf.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.cxf</groupId>
+			<artifactId>cxf-rt-management</artifactId>
+			<version>${cxf.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>com.fasterxml.jackson.jaxrs</groupId>
+			<artifactId>jackson-jaxrs-json-provider</artifactId>
+			<version>2.8.7</version>
+		</dependency>
+		<dependency>
+			<groupId>com.google.code.gson</groupId>
+			<artifactId>gson</artifactId>
+			<version>2.7</version>
+		</dependency>
+		<dependency>
+			<groupId>org.powermock</groupId>
+			<artifactId>powermock-module-junit4</artifactId>
+			<version>1.7.3</version>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.powermock</groupId>
+			<artifactId>powermock-api-mockito2</artifactId>
+			<version>1.7.3</version>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>${project.groupId}</groupId>
+			<artifactId>io.stemys.app.model</artifactId>
+			<version>${project.parent.version}</version>
+			<type>bundle</type>
+		</dependency>
+		<dependency>
+			<groupId>${project.groupId}</groupId>
+			<artifactId>io.stemys.app.persistence</artifactId>
+			<version>${project.parent.version}</version>
+			<type>bundle</type>
+		</dependency>
+		<dependency>
+			<groupId>io.stemys.platform.core</groupId>
+			<artifactId>io.stemys.platform.core.api</artifactId>
+			<version>${platform.version}</version>
+			<type>bundle</type>
+		</dependency>
+		<dependency>
+			<groupId>io.stemys.platform.core</groupId>
+			<artifactId>io.stemys.platform.core.thing</artifactId>
+			<version>${platform.version}</version>
+			<type>bundle</type>
+		</dependency>
+		<dependency>
+			<groupId>io.stemys.app</groupId>
+			<artifactId>io.stemys.binding.smartfactory</artifactId>
+			<version>${project.parent.version}</version>
+			<type>bundle</type>
+		</dependency>
+	</dependencies>
+</project>

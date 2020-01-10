@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence version="2.0" xmlns="http://java.sun.com/xml/ns/persistence"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://java.sun.com/xml/ns/persistence http://java.sun.com/xml/ns/persistence/persistence_2_0.xsd">
+    
+    <persistence-unit name="jellix" transaction-type="JTA">
+        <provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
+		
+        <jta-data-source>osgi:service/javax.sql.DataSource/(osgi.jndi.service.name=stemys-app)</jta-data-source>
+        <non-jta-data-source>osgi:service/javax.sql.DataSource/(osgi.jndi.service.name=stemys-app)</non-jta-data-source>
+        
+         <!-- If you would use MySQL to store data, you should declare them here. For example: -->
+        <!-- <class>io.stemys.app.model.AppModel</class> -->
+        
+		<exclude-unlisted-classes>true</exclude-unlisted-classes>
+        <properties>
+            <property name="hibernate.archive.autodetection" value="class" />
+			<property name="hibernate.connection.driver_class" value="com.mysql.jdbc.Driver" />
+            <property name="hibernate.hbm2ddl.auto" value="validate"/>
+<!--        <property name="hibernate.dialect" value="org.hibernate.dialect.MySQLDialect"/> -->
+            <property name="hibernate.show_sql" value="false" />
+            <property name="hibernate.current_session_context_class" value="jta" /> 
+            <property name="hibernate.enable_lazy_load_no_trans" value="true"/>
+            <property name="hibernate.classloading.use_current_tccl_as_parent" value="false" />
+    	</properties>
+    </persistence-unit>
+
+</persistence>

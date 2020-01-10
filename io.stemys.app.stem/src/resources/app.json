@@ -1,0 +1,11 @@
+{
+	"appid": "fv659fe5-f926-45d7-b9b6-1c45g93dftg6",
+	"name": "Stemys app skeleton",
+	"description": "This is an empty app skeleton",
+	"developer": "Stemys.io",
+	"version": "0.0.1-SNAPSHOT",
+	"context": "stemys-app",
+	"feature": "${app.feature}",
+	"profile": "${app.activeProfile}",
+	"platformVersion": "1.2.4"
+}

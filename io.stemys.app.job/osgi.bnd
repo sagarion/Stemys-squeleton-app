@@ -1,0 +1,4 @@
+-dsannotations: *
+Import-Package: \
+ 	*
+Export-Package: io.stemys.app.job.*

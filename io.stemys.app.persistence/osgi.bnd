@@ -1,0 +1,7 @@
+Import-Package: \
+    org.hibernate.proxy, \
+    javassist.util.proxy, \
+    io.stemys.platform.core.model.common.service, \
+    io.stemys.platform.core.persistence.utils, \
+    *
+Export-Package: io.stemys.app.persistence.impl

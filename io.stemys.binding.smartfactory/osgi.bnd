@@ -1,0 +1,11 @@
+Import-Package: org.osgi.framework;version="[1.5,2)", \
+ org.osgi.service.component;version="[1.2,2)", \
+ org.slf4j;version="[1.6,2)", \
+ io.stemys.platform.core.thing.model.thingtype, \
+ io.stemys.platform.core.thing.model.protocol, \
+ io.stemys.platform.core.thing.model.binding, \
+ io.stemys.platform.core.thing.model, \
+ io.stemys.platform.core.thing.query, \
+ io.stemys.platform.core.thing.service, \
+ org.bson
+Service-Component: OSGI-INF/*.xml

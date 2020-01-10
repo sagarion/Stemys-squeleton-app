@@ -1,0 +1,48 @@
+<tns:binding id="io.stemys.binding.smartfactory" xmlns:tns="http://stemys.io/agent"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://stemys.io/agent binding.xsd ">
+	<name>Smartfactory</name>
+	<itemForUniqueId/>
+	<class>io.stemys.binding.smartfactory.model.Smartfactory</class>
+	<description>Binding dedicated to the smartfactory test controller</description>
+	<author>Daucourt Thibault 08.12.2019</author>
+	<version>0.0.3</version>
+
+
+	<!-- définition des métriques -->
+	<itemsTypes>
+		<!-- métrique EmergencyState -->
+		<itemType id="EmergencyState">
+			<name>EmergencyState</name>
+			<type>single</type>
+			<description>State of emergency activated or not on the smartfactory controler</description>
+			<defaultValue>false</defaultValue>
+			<dataType>boolean</dataType>
+			<variables/>
+			<commands/>
+		</itemType>
+
+		<!-- métrique EmergencyMessage -->
+		<!--<itemType id="EmergencyMessage">
+            <name>EmergencyMessage</name>
+            <type>single</type>
+            <description>chaîne de caractères lié à l'état d'urgence du système</description>
+            <defaultValue>""</defaultValue>
+            <dataType>string</dataType>
+            <variables/>
+            <commands/>
+        </itemType>-->
+
+		<!-- métrique Runtime -->
+		<itemType id="Runtime">
+			<name>Runtime</name>
+			<type>single</type>
+			<description>entier représentant le temps en seconde depuis démmarage</description>
+			<defaultValue>0</defaultValue>
+			<dataType>integer</dataType>
+			<variables/>
+			<commands/>
+		</itemType>
+
+	</itemsTypes>
+
+</tns:binding>

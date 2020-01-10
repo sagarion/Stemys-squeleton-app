@@ -1,0 +1,4 @@
+-dsannotations: *
+Import-Package: \
+	*
+    

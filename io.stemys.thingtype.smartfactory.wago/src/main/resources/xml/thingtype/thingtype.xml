@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thingtype:thingType binding="io.stemys.binding.smartfactory"
+					 id="io.stemys.thingtype.smartfactory.wago"
+					 xmlns:thingtype="http://stemys.io/thingtype"
+					 xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+					 xsi:schemaLocation="http://stemys.io/thingtype thingType.xsd ">
+	<name>SmartfactoryWago</name>
+	<author>ThibaultDaucourt</author>
+	<version>0.0.3</version>
+
+	<!-- scheduler déterminant le temps entre les imports de données -->
+	<schedulers>
+		<scheduler type="recurrent" id="scheduler-1">
+			<time>1</time>
+			<unit>SECONDS</unit>
+		</scheduler>
+	</schedulers>
+
+	<!-- Décrit le mod de communication par ITEM/par Thing -->
+	<mode>
+		<read>item</read>
+		<config>modbus-1</config>
+		<schedulerId>scheduler-1</schedulerId>
+	</mode>
+
+	<items>
+		<!-- Définition de EmergencyState -->
+		<item itemTypeId="EmergencyState" id="EmergencyState" schedulerId="scheduler-1">
+			<defaultValue>0</defaultValue>
+			<read id="" config="modbus-1">
+				<value>
+					<parameters>
+						<!-- Holding register, slave 1, adresse 0, longueur 1 -->
+						<parameter id="READ_METHOD">READ_HOLDING_REGISTER</parameter>
+						<parameter id="UNITID">1</parameter>
+						<parameter id="ADDRESS">0</parameter>
+						<parameter id="LENGTH">1</parameter>
+					</parameters>
+				</value>
+			</read>
+		</item>
+
+		<!-- Définition de Runtime -->
+		<item itemTypeId="Runtime" id="Runtime" schedulerId="scheduler-1">
+			<defaultValue></defaultValue>
+			<read id="" config="modbus-1">
+				<value>
+					<parameters>
+						<!-- Holding register, slave 1, adresse 1, longueur 1 -->
+						<parameter id="READ_METHOD">READ_HOLDING_REGISTER</parameter>
+						<parameter id="UNITID">1</parameter>
+						<parameter id="ADDRESS">1</parameter>
+						<parameter id="LENGTH">1</parameter>
+					</parameters>
+				</value>
+			</read>
+		</item>
+	</items>
+	<configs>
+		<config protocolId="io.stemys.protocol.modbus" id="modbus-1">
+			<parameters>
+				<parameter id="READ_METHOD">READ_HOLDING_REGISTER</parameter>
+				<parameter id="UNITID">1</parameter>
+				<parameter id="LENGTH">16</parameter>
+			</parameters>
+		</config>
+	</configs>
+</thingtype:thingType>
+

@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="io.stemys.app.persistence" />
+        <module name="io.stemys.app.api" />
+        <module name="io.stemys.app.init" />
+        <module name="io.stemys.thingtype.smartfactory.wago" />
+        <module name="io.stemys.thingtype.test" />
+        <module name="io.stemys.app.job" />
+        <module name="io.stemys.app.kar" />
+        <module name="io.stemys.app.model" />
+        <module name="io.stemys.protocol.modbus" />
+        <module name="io.stemys.binding.smartfactory" />
+        <module name="io.stemys.app.web" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="io.stemys.app.api" target="1.7" />
+      <module name="io.stemys.app.features" target="1.7" />
+      <module name="io.stemys.app.init" target="1.7" />
+      <module name="io.stemys.app.job" target="1.7" />
+      <module name="io.stemys.app.kar" target="1.7" />
+      <module name="io.stemys.app.model" target="1.7" />
+      <module name="io.stemys.app.parent" target="1.7" />
+      <module name="io.stemys.app.persistence" target="1.7" />
+      <module name="io.stemys.app.stem" target="1.7" />
+      <module name="io.stemys.app.web" target="1.7" />
+      <module name="io.stemys.binding.smartfactory" target="1.7" />
+      <module name="io.stemys.binding.switchbutton" target="1.7" />
+      <module name="io.stemys.protocol.modbus" target="1.7" />
+      <module name="io.stemys.thingtype.machine.bandex" target="1.5" />
+      <module name="io.stemys.thingtype.smartfactory.wago" target="1.7" />
+      <module name="io.stemys.thingtype.switchbutton.wago" target="1.7" />
+      <module name="io.stemys.thingtype.test" target="1.7" />
+    </bytecodeTargetLevel>
+  </component>
+</project>

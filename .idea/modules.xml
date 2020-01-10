@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/io.stemys.app.api/io.stemys.app.api.iml" filepath="$PROJECT_DIR$/io.stemys.app.api/io.stemys.app.api.iml" />
+      <module fileurl="file://$PROJECT_DIR$/io.stemys.app.features/io.stemys.app.features.iml" filepath="$PROJECT_DIR$/io.stemys.app.features/io.stemys.app.features.iml" />
+      <module fileurl="file://$PROJECT_DIR$/io.stemys.app.init/io.stemys.app.init.iml" filepath="$PROJECT_DIR$/io.stemys.app.init/io.stemys.app.init.iml" />
+      <module fileurl="file://$PROJECT_DIR$/io.stemys.app.job/io.stemys.app.job.iml" filepath="$PROJECT_DIR$/io.stemys.app.job/io.stemys.app.job.iml" />
+      <module fileurl="file://$PROJECT_DIR$/io.stemys.app.kar/io.stemys.app.kar.iml" filepath="$PROJECT_DIR$/io.stemys.app.kar/io.stemys.app.kar.iml" />
+      <module fileurl="file://$PROJECT_DIR$/io.stemys.app.model/io.stemys.app.model.iml" filepath="$PROJECT_DIR$/io.stemys.app.model/io.stemys.app.model.iml" />
+      <module fileurl="file://$PROJECT_DIR$/io.stemys.app.parent.iml" filepath="$PROJECT_DIR$/io.stemys.app.parent.iml" />
+      <module fileurl="file://$PROJECT_DIR$/io.stemys.app.persistence/io.stemys.app.persistence.iml" filepath="$PROJECT_DIR$/io.stemys.app.persistence/io.stemys.app.persistence.iml" />
+      <module fileurl="file://$PROJECT_DIR$/io.stemys.app.stem/io.stemys.app.stem.iml" filepath="$PROJECT_DIR$/io.stemys.app.stem/io.stemys.app.stem.iml" />
+      <module fileurl="file://$PROJECT_DIR$/io.stemys.app.web/io.stemys.app.web.iml" filepath="$PROJECT_DIR$/io.stemys.app.web/io.stemys.app.web.iml" />
+      <module fileurl="file://$PROJECT_DIR$/io.stemys.binding.smartfactory/io.stemys.binding.smartfactory.iml" filepath="$PROJECT_DIR$/io.stemys.binding.smartfactory/io.stemys.binding.smartfactory.iml" />
+      <module fileurl="file://$PROJECT_DIR$/io.stemys.protocol.modbus/io.stemys.protocol.modbus.iml" filepath="$PROJECT_DIR$/io.stemys.protocol.modbus/io.stemys.protocol.modbus.iml" />
+      <module fileurl="file://$PROJECT_DIR$/io.stemys.thingtype.smartfactory.wago/io.stemys.thingtype.smartfactory.wago.iml" filepath="$PROJECT_DIR$/io.stemys.thingtype.smartfactory.wago/io.stemys.thingtype.smartfactory.wago.iml" />
+      <module fileurl="file://$PROJECT_DIR$/io.stemys.thingtype.test/io.stemys.thingtype.test.iml" filepath="$PROJECT_DIR$/io.stemys.thingtype.test/io.stemys.thingtype.test.iml" />
+    </modules>
+  </component>
+</project>

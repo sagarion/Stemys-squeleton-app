@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tns:protocol id="io.stemys.protocol.modbus" xmlns:tns="http://stemys.io/protocol"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://stemys.io/protocol protocol.xsd ">
+	<name>Modbus</name>
+	<description>description</description>
+	<author>stemys SA</author>
+	<version>0.0.1</version>
+	<read>
+		<name>Read</name>
+		<returnType>string</returnType>
+		<parameters>
+			<parameter id="UNITID">
+				<name>UNITID</name>
+				<dataType>short</dataType>
+				<required>true</required>
+			</parameter>
+			<parameter id="OFFSET">
+				<name>OFFSET</name>
+				<dataType>integer</dataType>
+				<required>true</required>
+			</parameter>
+			<parameter id="ADDRESS">
+				<name>ADDRESS</name>
+				<dataType>integer</dataType>
+				<required>true</required>
+			</parameter>
+			<parameter id="REVERSE_WORD">
+				<name>REVERSE_WORD</name>
+				<dataType>boolean</dataType>
+				<required>false</required>
+			</parameter>
+			<parameter id="FACTOR">
+				<name>FACTOR</name>
+				<dataType>double</dataType>
+				<required>false</required>
+			</parameter>
+			<parameter id="LENGTH">
+				<name>LENGTH</name>
+				<dataType>integer</dataType>
+				<required>true</required>
+			</parameter>
+			<parameter id="READ_METHOD">
+				<name>READ_METHOD</name>
+				<dataType>string</dataType>
+				<required>false</required>
+			</parameter>
+		</parameters>
+	</read>
+	<write>
+		<name>name</name>
+		<returnType>boolean</returnType>
+		<parameters />
+	</write>
+	<methods />
+	<parameters>
+		<parameter id="IP">
+			<name>IP</name>
+			<dataType>string</dataType>
+			<required>true</required>
+		</parameter>
+		<parameter id="PORT">
+			<name>PORT</name>
+			<dataType>short</dataType>
+			<required>true</required>
+		</parameter>
+		<parameter id="ADDRESS">
+			<name>ADDRESS</name>
+			<dataType>short</dataType>
+			<required>true</required>
+		</parameter>
+	</parameters>
+</tns:protocol>

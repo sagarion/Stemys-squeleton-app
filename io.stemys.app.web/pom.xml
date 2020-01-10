@@ -1,0 +1,125 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<groupId>io.stemys.app</groupId>
+		<artifactId>io.stemys.app.parent</artifactId>
+		<version>0.0.1-SNAPSHOT</version>
+		<relativePath>..</relativePath>
+	</parent>
+	<name>${project.groupId}.web</name>
+	<artifactId>io.stemys.app.web</artifactId>
+	<packaging>bundle</packaging>
+
+	<profiles>
+		<profile>
+			<id>default</id>
+			<activation>
+				<activeByDefault>true</activeByDefault>
+			</activation>
+			<properties>
+				<skipNodeInstall>-v</skipNodeInstall>
+			</properties>
+		</profile>
+		<profile>
+			<id>ngInstall</id>
+			<activation>
+				<activeByDefault>false</activeByDefault>
+			</activation>
+			<properties>
+				<skipNodeInstall>install</skipNodeInstall>
+			</properties>
+		</profile>
+	</profiles>
+
+	<build>
+		<resources>
+			<resource>
+				<directory>${basedir}/target/resources</directory>
+			</resource>
+		</resources>
+		<plugins>
+<!-- 			<plugin> -->
+<!-- 				<groupId>com.github.eirslett</groupId> -->
+<!-- 				<artifactId>frontend-maven-plugin</artifactId> -->
+<!-- 				NB! Set <version> to the latest released version of frontend-maven-plugin, like in README.md -->
+<!-- 				<version>1.6</version> -->
+<!-- 				<executions> -->
+<!-- 					<execution> -->
+<!-- 						<id>install node and npm</id> -->
+<!-- 						<goals> -->
+<!-- 							<goal>install-node-and-npm</goal> -->
+<!-- 						</goals> -->
+<!-- 						<configuration> -->
+<!-- 							<workingDirectory>${basedir}/src/main</workingDirectory> -->
+<!-- 							See https://nodejs.org/en/download/ for latest node and npm (lts) versions -->
+<!-- 							<nodeVersion>v6.2.0</nodeVersion> -->
+<!-- 							<npmVersion>4.1.1</npmVersion> -->
+<!-- 						</configuration> -->
+<!-- 					</execution> -->
+<!-- 					<execution> -->
+<!-- 						<id>npm install</id> -->
+<!-- 						<goals> -->
+<!-- 							<goal>npm</goal> -->
+<!-- 						</goals> -->
+<!-- 						<phase>generate-resources</phase> -->
+<!-- 						Optional configuration which provides for running any npm command -->
+<!-- 						<configuration> -->
+<!-- 							<workingDirectory>${basedir}/src/main</workingDirectory> -->
+<!-- 							<arguments>install</arguments> -->
+<!-- 						</configuration> -->
+<!-- 					</execution> -->
+<!-- 					<execution> -->
+<!-- 						<id>npm run</id> -->
+<!-- 						<goals> -->
+<!-- 							<goal>npm</goal> -->
+<!-- 						</goals> -->
+<!-- 						<phase>generate-resources</phase> -->
+<!-- 						Optional configuration which provides for running any npm command -->
+<!-- 						<configuration> -->
+<!-- 							<workingDirectory>${basedir}/src/main</workingDirectory> -->
+<!-- 							<arguments>run</arguments> -->
+<!-- 						</configuration> -->
+<!-- 					</execution> -->
+<!-- 				</executions> -->
+<!-- 			</plugin> -->
+			<plugin>
+				<artifactId>maven-resources-plugin</artifactId>
+				<version>3.1.0</version>
+				<executions>
+					<execution>
+						<id>copy-resources</id>
+						<!-- here the phase you need -->
+						<phase>validate</phase>
+						<goals>
+							<goal>copy-resources</goal>
+						</goals>
+						<configuration>
+							<outputDirectory>${basedir}/target/resources</outputDirectory>
+							<resources>
+								<resource>
+									<directory>src/main/resources</directory>
+								</resource>
+							</resources>
+						</configuration>
+					</execution>
+				</executions>
+			</plugin>
+		</plugins>
+	</build>
+
+	<properties>
+		<servlet.spec.groupId>javax.servlet</servlet.spec.groupId>
+		<servlet.spec.artifactId>javax.servlet-api</servlet.spec.artifactId>
+		<servlet.spec.version>3.1.0</servlet.spec.version>
+	</properties>
+
+	<dependencies>
+		<dependency>
+			<groupId>${servlet.spec.groupId}</groupId>
+			<artifactId>${servlet.spec.artifactId}</artifactId>
+			<version>${servlet.spec.version}</version>
+			<scope>provided</scope>
+		</dependency>
+	</dependencies>
+</project>
