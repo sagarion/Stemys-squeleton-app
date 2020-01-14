@@ -13,7 +13,7 @@
 
 -->
 <scr:component xmlns:scr="http://www.osgi.org/xmlns/scr/v1.1.0" activate="activate" deactivate="deactivate" name="io.stemys.thingtype.smartfactory.wago">
-   <implementation class="io.stemys.thingtype.smartfactory.wago.WagoSmartfactoryThingType"/>
+   <implementation class="io.stemys.thingtype.WagoSmartfactoryThingType"/>
    <service>
       <provide interface="io.stemys.platform.core.thing.model.thingtype.ThingTypeModel"/>
    </service>
