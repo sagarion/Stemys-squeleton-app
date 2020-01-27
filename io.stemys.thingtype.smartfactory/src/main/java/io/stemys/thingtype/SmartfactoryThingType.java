@@ -9,8 +9,9 @@ import org.osgi.service.component.ComponentContext;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import io.stemys.platform.core.thing.model.thingtype.*;
 
-public class SmartfactoryThingType {
+public class SmartfactoryThingType implements ThingTypeModel{
     private static final Logger s_logger = LoggerFactory.getLogger(SmartfactoryThingType.class);
 
     // ----------------------------------------------------------------
