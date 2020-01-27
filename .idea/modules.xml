@@ -13,9 +13,9 @@
       <module fileurl="file://$PROJECT_DIR$/io.stemys.app.stem/io.stemys.app.stem.iml" filepath="$PROJECT_DIR$/io.stemys.app.stem/io.stemys.app.stem.iml" />
       <module fileurl="file://$PROJECT_DIR$/io.stemys.app.web/io.stemys.app.web.iml" filepath="$PROJECT_DIR$/io.stemys.app.web/io.stemys.app.web.iml" />
       <module fileurl="file://$PROJECT_DIR$/io.stemys.binding.smartfactory/io.stemys.binding.smartfactory.iml" filepath="$PROJECT_DIR$/io.stemys.binding.smartfactory/io.stemys.binding.smartfactory.iml" />
+      <module fileurl="file://$PROJECT_DIR$/io.stemys.binding.sondetemperature/io.stemys.binding.sondetemperature.iml" filepath="$PROJECT_DIR$/io.stemys.binding.sondetemperature/io.stemys.binding.sondetemperature.iml" />
       <module fileurl="file://$PROJECT_DIR$/io.stemys.protocol.modbus/io.stemys.protocol.modbus.iml" filepath="$PROJECT_DIR$/io.stemys.protocol.modbus/io.stemys.protocol.modbus.iml" />
       <module fileurl="file://$PROJECT_DIR$/io.stemys.thingtype.smartfactory/io.stemys.thingtype.smartfactory.iml" filepath="$PROJECT_DIR$/io.stemys.thingtype.smartfactory/io.stemys.thingtype.smartfactory.iml" />
-      <module fileurl="file://$PROJECT_DIR$/io.stemys.thingtype.sondetemperature.wago/io.stemys.thingtype.sondetemperature.wago.iml" filepath="$PROJECT_DIR$/io.stemys.thingtype.sondetemperature.wago/io.stemys.thingtype.sondetemperature.wago.iml" />
     </modules>
   </component>
 </project>

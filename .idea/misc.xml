@@ -10,6 +10,7 @@
       <set>
         <option value="$PROJECT_DIR$/io.stemys.binding.switchbutton/pom.xml" />
         <option value="$PROJECT_DIR$/io.stemys.thingtype.machine.bandex/pom.xml" />
+        <option value="$PROJECT_DIR$/io.stemys.thingtype.sondetemperature.wago/pom.xml" />
         <option value="$PROJECT_DIR$/io.stemys.thingtype.switchbutton.wago/pom.xml" />
       </set>
     </option>

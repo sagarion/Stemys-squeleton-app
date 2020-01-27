@@ -42,11 +42,7 @@ public class Smartfactory extends Thing {
     }
 
     public boolean getEmergencyState(){
-        String value = (String)getItemValueById(ITEM_EMERGENCY_STATE);
-        if (value != null) {
-            return value == "1" ? true : false;
-        }
-        return false;
+        return (boolean)getItemValueById(ITEM_EMERGENCY_STATE);
     }
 
     public void setRuntime(Integer runtime){

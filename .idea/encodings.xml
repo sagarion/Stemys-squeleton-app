@@ -16,17 +16,12 @@
     <file url="file://$PROJECT_DIR$/io.stemys.app.persistence/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/io.stemys.app.stem" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/io.stemys.app.web" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/io.stemys.app.web/target/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/io.stemys.binding.smartfactory" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/io.stemys.binding.smartfactory/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/io.stemys.binding.smartfactory/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/io.stemys.protocol.modbus" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/io.stemys.protocol.modbus/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/io.stemys.protocol.modbus/src/main/resources" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/io.stemys.thingtype.smartfactory.wago" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/io.stemys.thingtype.smartfactory.wago/src/main/java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/io.stemys.thingtype.smartfactory.wago/src/main/resources" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/io.stemys.thingtype.test" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/io.stemys.thingtype.test/src/main/java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/io.stemys.thingtype.test/src/main/resources" charset="UTF-8" />
   </component>
 </project>

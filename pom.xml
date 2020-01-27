@@ -23,8 +23,6 @@
 		<module>io.stemys.protocol.modbus</module>
 		<module>io.stemys.binding.smartfactory</module>
 		<module>io.stemys.thingtype.smartfactory</module>
-		<module>io.stemys.thingtype.sondetemperature.wago</module>
-		<module>io.stemys.binding.sondetemperature</module>
 	</modules>
 
 	<profiles>
