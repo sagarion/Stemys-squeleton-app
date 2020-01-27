@@ -1,0 +1,217 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <parent>
+		<groupId>io.stemys.app</groupId>
+		<artifactId>io.stemys.app.parent</artifactId>
+		<relativePath>..</relativePath>
+		<version>0.0.1-SNAPSHOT</version>
+  </parent>
+  <artifactId>io.stemys.thingtype.smartfactory</artifactId>
+  <packaging>bundle</packaging>
+  <name>io.stemys.thingtype.smartfactory</name>
+
+  	<dependencies>
+		<dependency>
+			<groupId>io.stemys.app</groupId>
+			<artifactId>io.stemys.protocol.modbus</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
+		</dependency>
+		<dependency>
+			<groupId>io.stemys.platform.core</groupId>
+			<artifactId>io.stemys.platform.core.thing</artifactId>
+			<version>${platform.version}</version>
+			<type>bundle</type>
+			<scope>provided</scope>
+		</dependency>
+		<dependency>
+            <groupId>org.ops4j.pax.cdi</groupId>
+            <artifactId>pax-cdi-api</artifactId>
+            <version>1.0.0.RC2</version>
+            <optional>true</optional>
+            <exclusions>
+            	<exclusion>
+            		<groupId>org.osgi</groupId>
+            		<artifactId>org.osgi.compendium</artifactId>
+            	</exclusion>
+            </exclusions>
+            <scope>provided</scope>
+        </dependency>
+		<dependency>
+			<groupId>javax.inject</groupId>
+			<artifactId>javax.inject</artifactId>
+			<version>1</version>
+			<scope>provided</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>slf4j-api</artifactId>
+			<version>1.7.7</version>
+			<scope>provided</scope>
+		</dependency>
+		 <dependency>
+            <groupId>javax.transaction</groupId>
+            <artifactId>javax.transaction-api</artifactId>
+            <version>1.2</version>
+            <scope>provided</scope>
+        </dependency>
+		<dependency>
+			<groupId>org.osgi</groupId>
+			<artifactId>org.osgi.core</artifactId>
+			<version>${osgi.version}</version>
+			<scope>provided</scope>
+		</dependency>
+		<dependency>
+            <groupId>org.osgi</groupId>
+            <artifactId>osgi.cmpn</artifactId>
+            <version>${osgi.version}</version>
+            <scope>provided</scope>
+        </dependency>
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>4.11</version>
+			<scope>test</scope>
+		</dependency>
+	</dependencies>
+
+  <build>
+		<plugins>
+		    <plugin>
+            <artifactId>maven-dependency-plugin</artifactId>
+            <executions>
+              <execution>
+                <phase>package</phase>
+                <goals>
+                  <goal>copy-dependencies</goal>
+                </goals>
+                <configuration>
+                  <includeScope>runtime</includeScope>
+                  <outputDirectory>${project.build.directory}/lib</outputDirectory>
+                </configuration>
+              </execution>
+            </executions>
+          </plugin>
+			  <plugin>
+	        <groupId>org.codehaus.gmaven</groupId>
+		    <artifactId>groovy-maven-plugin</artifactId>
+	    </plugin>
+  		<plugin>
+		        <artifactId>maven-assembly-plugin</artifactId>
+		    </plugin>
+		    <plugin>
+			    <groupId>org.apache.maven.plugins</groupId>
+			    <artifactId>maven-antrun-plugin</artifactId>
+			</plugin>
+
+	</plugins>
+	<pluginManagement>
+		<plugins>
+		<plugin>
+			<groupId>org.codehaus.gmaven</groupId>
+			<artifactId>groovy-maven-plugin</artifactId>
+			<version>2.1</version>
+			<executions>
+				<execution>
+					<phase>generate-resources</phase>
+					<goals>
+						<goal>execute</goal>
+					</goals>
+					<configuration>
+						<properties>
+							<thingtypeFolder>${project.basedir}/src/main/resources/xml/thingtype/</thingtypeFolder>
+							<jsonOutputFolder>${project.basedir}/target/</jsonOutputFolder>
+							<jsonOutputFilename>thingtype.json</jsonOutputFilename>
+						</properties>
+						<source>
+							import groovy.json.*
+
+							// Check all properties are set
+							assert properties['thingtypeFolder'] instanceof String
+							assert properties['jsonOutputFolder'] instanceof String
+							assert properties['jsonOutputFilename'] instanceof String
+
+							class ThingtypeDescription {
+								String thingtypeid
+								String name
+								String description
+								String developer
+								String version
+							}
+
+							def forEachXML(Closure closure) {
+								new File(properties['thingtypeFolder']).eachFileMatch(~/.*.xml/) { file -> closure(file) }
+							}
+
+							forEachXML {
+								def xmlDesc = new XmlParser().parse(it)
+
+								// Check the needed information are present in XML description file
+								assert xmlDesc instanceof Node
+								assert xmlDesc.attributes().id instanceof String
+								['author','name'].each { nodeName ->
+    								assert xmlDesc.'**'.findAll { it.name() == nodeName }.size() > 0
+								}
+
+								def ttDesc = new ThingtypeDescription()
+								ttDesc.thingtypeid = xmlDesc.attributes().id
+								ttDesc.name = xmlDesc.name.text()
+								ttDesc.version = "${project.version}"
+								ttDesc.developer = xmlDesc.author.text()
+								ttDesc.description = xmlDesc.name.text()
+
+								def outputFolder = new File(properties['jsonOutputFolder'])
+								if (!outputFolder.exists()) {
+									outputFolder.mkdirs();
+								}
+								new File(outputFolder, properties['jsonOutputFilename']).write(new JsonBuilder(ttDesc).toPrettyString())
+							}
+						</source>
+					</configuration>
+				</execution>
+			</executions>
+		</plugin>
+  		<plugin>
+		        <artifactId>maven-assembly-plugin</artifactId>
+		        <version>2.5.3</version>
+		        <configuration>
+		          <descriptor>./src/assembly/dep.xml</descriptor>
+		          <attach>false</attach>
+		        </configuration>
+		        <executions>
+		          <execution>
+		            <id>create-archive</id>
+		            <phase>package</phase>
+		            <goals>
+		              <goal>single</goal>
+		            </goals>
+		          </execution>
+		        </executions>
+		    </plugin>
+		    <plugin>
+			    <groupId>org.apache.maven.plugins</groupId>
+			    <artifactId>maven-antrun-plugin</artifactId>
+			    <version>1.8</version>
+			    <executions>
+			        <execution>
+			            <phase>package</phase>
+			            <goals>
+			                <goal>run</goal>
+			            </goals>
+			            <configuration>
+			                <tasks>
+			                    <echo>Generating .stem file</echo>
+			                    <move todir="${basedir}/target/">
+			                        <fileset dir="${basedir}/target/" >
+							            <include name="**/*.tar.gz" />
+							        </fileset>
+							        <mapper type="glob" from="*.tar.gz" to="*.stem"/>
+			                    </move>
+			                </tasks>
+			            </configuration>
+			        </execution>
+			    </executions>
+			</plugin>
+			</plugins>
+	</pluginManagement>
+	</build>
+</project>

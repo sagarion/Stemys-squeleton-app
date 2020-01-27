@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<scr:component xmlns:scr="http://www.osgi.org/xmlns/scr/v1.1.0" activate="activate" deactivate="deactivate" name="io.stemys.binding.sondetemperature.SondetemperatureBinding">
+   <implementation class="io.stemys.binding.sondetemperature.SondetemperatureBinding"/>
+   <service>
+      <provide interface="io.stemys.platform.core.thing.model.binding.BindingModel"/>
+      <provide interface="io.stemys.binding.sondetemperature.service.SondetemperatureService"/>
+   </service>
+   <property name="service.pid" value="io.stemys.binding.sondetemperature" />
+   
+   <reference bind="setThingDBService"
+   	 cardinality="1..1"
+   	 interface="io.stemys.platform.core.thing.service.ThingDBService"
+   	 name="ThingDBService"
+   	 policy="static" unbind="unsetThingDBService"/>
+   
+   <reference bind="setItemValueService" cardinality="1..1" interface="io.stemys.platform.core.thing.service.ItemValueService" name="ItemValueService" policy="static" unbind="unsetItemValueService"/>
+     
+</scr:component>
