@@ -33,7 +33,7 @@
         </itemType>-->
 
 		<!-- métrique Runtime -->
-		<itemType id="runtime">
+		<!--<itemType id="runtime">
 			<name>Runtime</name>
 			<type>single</type>
 			<description>entier représentant le temps en seconde depuis démmarage</description>
@@ -41,7 +41,7 @@
 			<dataType>integer</dataType>
 			<variables/>
 			<commands/>
-		</itemType>
+		</itemType>-->
 
 	</itemsTypes>
 

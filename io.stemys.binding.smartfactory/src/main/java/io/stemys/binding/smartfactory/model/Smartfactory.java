@@ -41,8 +41,8 @@ public class Smartfactory extends Thing {
         setItemValueById(ITEM_EMERGENCY_STATE, String.valueOf(state));
     }
 
-    public boolean getEmergencyState(){
-        return (boolean)getItemValueById(ITEM_EMERGENCY_STATE);
+    public Boolean getEmergencyState(){
+        return (Boolean)getItemValueById(ITEM_EMERGENCY_STATE);
     }
 
     public void setRuntime(Integer runtime){

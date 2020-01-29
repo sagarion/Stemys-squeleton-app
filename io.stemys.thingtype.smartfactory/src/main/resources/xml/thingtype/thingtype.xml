@@ -25,7 +25,7 @@
 
 	<items>
 		<!-- Définition de EmergencyState -->
-		<item itemTypeId="state" id="state" schedulerId="scheduler-1">
+		<item itemTypeId="emergencyState" id="emergencyState" schedulerId="scheduler-1">
 			<defaultValue>0</defaultValue>
 			<read id="" config="modbus-1">
 				<value>
@@ -34,7 +34,7 @@
 						<parameter id="READ_METHOD">READ_HOLDING_REGISTER</parameter>
 						<parameter id="UNITID">1</parameter>
 						<parameter id="ADDRESS">0</parameter>
-						<parameter id="LENGTH">1</parameter>
+						<parameter id="LENGTH">16</parameter>
 						<parameter id="OFFSET">0</parameter>
 						<parameter id="EXTRA">STATE</parameter>
 					</parameters>
@@ -43,22 +43,22 @@
 		</item>
 
 		<!-- Définition de Runtime -->
-		<item itemTypeId="runtime" id="runtime" schedulerId="scheduler-1">
+		<!--<item itemTypeId="runtime" id="runtime" schedulerId="scheduler-1">
 			<defaultValue></defaultValue>
 			<read id="" config="modbus-1">
 				<value>
-					<parameters>
+					<parameters>-->
 						<!-- Holding register, slave 1, adresse 1, longueur 1 -->
-						<parameter id="READ_METHOD">READ_HOLDING_REGISTER</parameter>
-						<parameter id="UNITID">1</parameter>
-						<parameter id="ADDRESS">1</parameter>
-						<parameter id="LENGTH">1</parameter>
-						<parameter id="OFFSET">0</parameter>
+						<!--<parameter id="READ_METHOD">READ_HOLDING_REGISTER</parameter>
+						<parameter id="UNITID">1</parameter>-->
+						<!--<parameter id="ADDRESS">40002</parameter>-->
+						<!--<parameter id="LENGTH">16</parameter>
+						<parameter id="OFFSET">1</parameter>
 						<parameter id="EXTRA">RUNTIME</parameter>
 					</parameters>
 				</value>
 			</read>
-		</item>
+		</item>-->
 	</items>
 	<configs>
 		<config protocolId="io.stemys.protocol.modbus" id="modbus-1">
