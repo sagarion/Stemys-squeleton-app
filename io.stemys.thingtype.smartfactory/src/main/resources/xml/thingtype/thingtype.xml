@@ -18,7 +18,7 @@
 
 	<!-- Décrit le mod de communication par ITEM/par Thing -->
 	<mode>
-		<read>item</read>
+		<read>thing</read>
 		<config>modbus-1</config>
 		<schedulerId>scheduler-1</schedulerId>
 	</mode>
